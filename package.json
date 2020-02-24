@@ -1,0 +1,61 @@
+{
+  "name": "my-cv",
+  "version": "2020.2.0",
+  "description": "Javier Calzado's CV web version",
+  "main": "index.html",
+  "scripts": {
+    "clean": "rimraf build",
+    "typecheck": "tsc --pretty --noEmit",
+    "start": "npm run start:dev",
+    "start:dev": "webpack-dev-server --open --config ./webpack/webpack.dev.js",
+    "build": "npm run clean && npm run typecheck && webpack",
+    "build:dev": "npm run build -- --config ./webpack/webpack.dev.js",
+    "build:prod": "npm run build -- --config ./webpack/webpack.prod.js",
+    "build:prod:report": "npm run build -- --env.report --config ./webpack/webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fjcalzado/my-cv.git"
+  },
+  "keywords": [
+    "Javier",
+    "Calzado",
+    "CV"
+  ],
+  "author": "Javier Calzado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fjcalzado/my-cv/issues"
+  },
+  "homepage": "https://github.com/fjcalzado/my-cv#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.9.4",
+    "@material-ui/icons": "^4.9.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/node": "^13.7.4",
+    "@types/react": "^16.9.22",
+    "@types/react-dom": "^16.9.5",
+    "@types/webpack-env": "^1.15.1",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "tslint": "^6.0.0",
+    "tslint-react": "^4.2.0",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  }
+}
