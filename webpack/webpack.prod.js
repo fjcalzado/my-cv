@@ -1,6 +1,5 @@
 const webpack = require("webpack");
 const merge = require("webpack-merge");
-const helpers = require("./helpers");
 const common = require("./webpack.common");
 const helpers = require("./helpers");
 

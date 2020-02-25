@@ -1,12 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { Overview } from "./pods/overview";
+import { AppProviders } from "./app.providers";
 
 const App: React.FC = () => {
   return (
-    <>
-      <h1>Javier Calzado's CV</h1>
-      <h3>Under Construction</h3>
-    </>
+    <AppProviders>
+      <Overview />
+    </AppProviders>
   );
 };
 

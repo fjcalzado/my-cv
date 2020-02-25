@@ -10,6 +10,8 @@ exports.bundleName = bundleName;
 exports.versionName = versionName;
 exports.srcPath = resolveFromRootPath("src");
 exports.srcFaviconPath = resolveFromRootPath("src", "assets", "favicon");
+exports.srcFontsPath = resolveFromRootPath("src", "assets", "fonts");
 
 // Output/Build params.
 exports.buildPath = resolveFromRootPath("build");
+exports.buildFontsPath = "assets/fonts";

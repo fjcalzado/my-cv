@@ -23,6 +23,20 @@ module.exports = (env = {}) => ({
         exclude: /node_modules/,
         loader: "babel-loader",
       },
+      // Fonts rule. Copy to public font folder.
+      {
+        test: /\.(woff|woff2|ttf|otf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[hash].[ext]",
+              outputPath: helpers.buildFontsPath,
+              publicPath: `/${helpers.buildFontsPath}`,
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
