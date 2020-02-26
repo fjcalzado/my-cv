@@ -3,6 +3,7 @@
 .vscode/
 .idea/
 .cache/
+tmp/
 
 # Dependencies & Build
 node_modules/
