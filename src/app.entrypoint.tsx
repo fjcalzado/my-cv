@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
 import { Overview } from "./pods/overview";
 import { AppProviders } from "./app.providers";
 

@@ -1,13 +1,9 @@
-import * as React from "react";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
-import { SpacerStripes } from "../../common/components/spacer-stripes";
+import { StripesSpacer } from "../../common/components/stripes-spacer";
+import { Header } from "../../common/components/header";
+import { headerInfo, qr, headerLabels } from "../../data/en.mock";
 
 export const Overview: React.FC = () => {
-  return (
-    <>
-      <Typography variant="h1">JAVIER CALZADO</Typography>
-      <SpacerStripes />
-      <Typography variant="h3">Under Construction</Typography>
-    </>
-  );
+  return <Header info={headerInfo} qr={qr} labels={headerLabels} />;
 };
