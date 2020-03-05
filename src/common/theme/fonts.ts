@@ -1,7 +1,7 @@
 import * as CSS from "csstype";
 import LatoLight from "../../assets/fonts/LatoLight.ttf";
-import NovecentoSansWideNormal from "../../assets/fonts/NovecentoSansWideNormal.otf";
-import NovecentoSansWideBold from "../../assets/fonts/NovecentoSansWideBold.otf";
+import NovecentoSansNormal from "../../assets/fonts/NovecentoSansNormal.otf";
+import NovecentoSansBold from "../../assets/fonts/NovecentoSansBold.otf";
 import BebasNeueFont from "../../assets/fonts/BebasNeue.otf";
 import SofiaProLight from "../../assets/fonts/SofiaProLight.otf";
 
@@ -18,14 +18,14 @@ export const novecentoNormal: CSS.FontFace = {
   fontStyle: "normal",
   fontDisplay: "swap",
   fontWeight: 400,
-  src: `url(${NovecentoSansWideNormal})`,
+  src: `url(${NovecentoSansNormal})`,
 };
 export const novecentoBold: CSS.FontFace = {
   fontFamily: "Novecento Bold",
   fontStyle: "normal",
   fontDisplay: "swap",
   fontWeight: 400,
-  src: `url(${NovecentoSansWideBold})`,
+  src: `url(${NovecentoSansBold})`,
 };
 
 export const bebasNeue: CSS.FontFace = {

@@ -1,9 +1,12 @@
 import { QrSvg } from "./qr.mock";
+import { MapSvg } from "./map.mock";
 
 export const qr = {
   Svg: QrSvg,
   link: "",
 };
+
+export { MapSvg };
 
 export const headerInfo = {
   name: "Francisco Javier",

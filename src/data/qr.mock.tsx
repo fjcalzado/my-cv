@@ -1,6 +1,6 @@
 import React from "react";
 
-export const QrSvg: React.FC<{ className: string }> = ({ className }) => (
+export const QrSvg: React.FC<{ className?: string }> = ({ className }) => (
   <svg
     className={className}
     viewBox="32 32 232 232"

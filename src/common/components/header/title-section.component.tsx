@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import clsx from "clsx";
 import { StripesSpacer } from "../stripes-spacer";
-import { HeaderInfo, HeaderLabels } from "./header.model";
+import { HeaderInfo, HeaderLabels, HeaderOverlay } from "./header.model";
 import { InfoChip } from "./info-chip.component";
 
 const useStyles = makeStyles(theme => ({
@@ -14,8 +15,9 @@ const useStyles = makeStyles(theme => ({
       "resume resume . ."
       "birthdate nationality location ."
     `,
-    gridColumnGap: theme.spacing(1),
+    gridColumnGap: theme.spacing(4),
     justifyContent: "start",
+    alignItems: "center",
   },
   title: {
     gridArea: "title",
@@ -27,6 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
   separator: {
     gridArea: "separator",
+    margin: `${theme.spacing(1)}px 0`,
   },
   resume: {
     gridArea: "resume",
@@ -41,10 +44,32 @@ const useStyles = makeStyles(theme => ({
   location: {
     gridArea: "location",
   },
+  overlay: {
+    gridArea: "overlay",
+    color: theme.palette.secondary.main,
+    "& circle": {
+      fill: theme.palette.primary.main,
+    },
+    position: "absolute",
+    right: theme.spacing(4),
+    top: "5rem",
+    height: "7rem",
+    [theme.breakpoints.up("sm")]: {
+      height: "8rem",
+    },
+    [theme.breakpoints.up("md")]: {
+      height: "9rem",
+    },
+    [theme.breakpoints.up("lg")]: {
+      height: "10rem",
+    },
+  },
 }));
 
 type Props = Pick<HeaderInfo, "title" | "titleHighlights" | "birthdate" | "nationality" | "location"> & {
   labels: HeaderLabels;
+  Overlay?: HeaderOverlay;
+  className?: string;
 };
 
 export const TitleSection: React.FC<Props> = ({
@@ -54,27 +79,24 @@ export const TitleSection: React.FC<Props> = ({
   nationality,
   location,
   labels,
+  Overlay,
+  className,
 }) => {
   const classes = useStyles({});
 
-  const titleFormatted: React.ReactNode = (
-    <span>
-      {title
-        .split(" ")
-        .map(w =>
-          titleHighlights.includes(w) ? <span className={classes.hightlight}>{`${w} `}</span> : `${w} `
-        )}
-    </span>
-  );
-  console.log([title]);
+  const titleFormatted: React.ReactNode = title
+    .split(" ")
+    .map((w, i) =>
+      titleHighlights.includes(w) ? <span key={i} className={classes.hightlight}>{`${w} `}</span> : `${w} `
+    );
 
   return (
-    <div className={classes.container}>
+    <div className={clsx(classes.container, className)}>
       <Typography variant="h4" classes={{ root: classes.title }}>
         {titleFormatted}
       </Typography>
       <StripesSpacer className={classes.separator} />
-      <Typography variant="h4" color="secondary" classes={{ root: classes.resume }}>
+      <Typography variant="h5" color="secondary" classes={{ root: classes.resume }}>
         {labels.resume?.toUpperCase()}
       </Typography>
       <InfoChip label={labels.birthdate} className={classes.birthdate}>
@@ -86,6 +108,7 @@ export const TitleSection: React.FC<Props> = ({
       <InfoChip label={labels.location} className={classes.location}>
         {location}
       </InfoChip>
+      {Overlay ? <Overlay className={classes.overlay} /> : null}
     </div>
   );
 };

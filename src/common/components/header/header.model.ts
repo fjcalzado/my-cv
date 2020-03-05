@@ -1,7 +1,9 @@
 export interface HeaderQR {
-  Svg: React.ComponentType<{ className: string }>;
+  Svg: React.ComponentType<{ className?: string }>;
   link: string;
 }
+
+export type HeaderOverlay = React.ComponentType<{ className?: string }>;
 
 export interface HeaderLink {
   link: string;

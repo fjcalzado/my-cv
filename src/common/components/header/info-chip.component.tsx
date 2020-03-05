@@ -27,11 +27,11 @@ export const InfoChip: React.FC<Props> = ({ label, className, children }) => {
 
   return (
     <div className={clsx(classes.container, className)}>
-      <Typography color="primary" classes={{ root: classes.label }}>
+      <Typography variant="body2" color="primary" classes={{ root: classes.label }}>
         {label.toUpperCase()}
       </Typography>
-      <Typography classes={{ root: classes.content }}>
-        {typeof children === "string" ? children.toUpperCase() : children}
+      <Typography variant="body1" classes={{ root: classes.content }}>
+        {children}
       </Typography>
     </div>
   );

@@ -10,11 +10,22 @@ const useStyles = makeStyles(theme => ({
     },
   },
   label: {
+    ...theme.typography.h6,
     fontFamily: "Sofia Pro Light",
     color: theme.palette.text.primary,
+    alignSelf: "baseline",
+    lineHeight: "unset",
   },
   avatar: {
-    color: theme.palette.primary.main,
+    "$root &": {
+      color: theme.palette.primary.main,
+    },
+  },
+  outlined: {
+    border: "none",
+    "&&:hover": {
+      backgroundColor: theme.palette.secondary.light,
+    },
   },
 }));
 
